@@ -1,32 +1,74 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 50px;
+  background: orange;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.table-sortable > thead > tr > .sort-header {
+  cursor: pointer;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table-sortable > thead > tr > .sort-header:after,
+.table-sortable > thead > tr > .sort-header:after,
+.table-sortable > thead > tr > .sort-header:after {
+  content: ' ';
+	position: absolute;
+  height: 0;
+  width: 0;
+  right: 10px; /* (right padding / 2) - arrow width */
+  top: 22px; /* ((padding * 2) + line height) - arrow height */
+  /** As pointed out by Dave Everitt in 
+   * https://css-tricks.com/snippets/css/css-triangle/
+   * The arrow is not an equilateral triangle.
+   * the height is 86.6% of the width.
+   * Notice the above code does not subract the border 
+   * width exactly. It is subtracting
+   * (rounded) border width * 86.6%
+   **/
+}
+
+/* Default sortable indicator */
+.table-sortable > thead > tr > .sort-header:after {
+  border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #ccc;
+  border-bottom: 0px solid transparent;
+}
+/* !Default */
+
+/* Default sortable indicator:hover */
+.table-sortable > thead > tr > .sort-header:hover:after {
+	border-top: 5px solid #888;
+}
+/* !Default:hover */
+
+/* Ascending sortable indicator */
+.table-sortable > thead > tr > .sort-header.asc:after {
+  border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+  border-top: 0px solid transparent;
+	border-bottom: 5px solid #333;
+}
+.table-sortable > thead > tr > .sort-header.asc:hover:after {
+	border-bottom: 5px solid #888;
+}
+/* !Ascending */
+
+/* Descending sortable indicator */
+.table-sortable > thead > tr > th.desc:after {    
+  border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+	border-bottom: 5px solid transparent;
+}
+/* !Descending */
+
+.red-color {
+  color: #ff0000;
+}
+
+.green-color {
+  color: #008000;
 }

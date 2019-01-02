@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Molecule Man",
+        "lastName": "hehehe",
+        "voted": "YES"
+    },
+    {
+        "name": "pepito grillo",
+        "lastName": "smith",
+        "voted": "YES"
+    },
+    {
+        "name": "Antoni",
+        "lastName": "Wayne",
+        "voted": "NO"
+    },
+    {
+        "name": "Maria",
+        "lastName": "Gaudi",
+        "voted": "NO"
+    }
+]
